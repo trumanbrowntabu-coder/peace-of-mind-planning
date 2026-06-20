@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peace of Mind Planning — Estate Planning in Plain English</title>
+<meta name="description" content="Peace of Mind Planning is an educational channel covering U.S. estate planning for families over 50 — wills, living trusts, powers of attorney, beneficiary designations, and probate, explained in plain English.">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" sizes="192x192" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Peace of Mind Planning — Estate Planning in Plain English">
+<meta property="og:description" content="Educational U.S. estate planning for families over 50 — wills, trusts, and probate in plain English.">
+<meta property="og:image" content="https://{{DOMAIN}}/logo.png">
+<meta property="og:url" content="https://{{DOMAIN}}/">
+<meta property="og:site_name" content="Peace of Mind Planning">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peace of Mind Planning — Estate Planning in Plain English">
+<meta name="twitter:description" content="Educational U.S. estate planning for families over 50 — wills, trusts, and probate in plain English.">
+<meta name="twitter:image" content="https://{{DOMAIN}}/logo.png">
+
+<!-- JSON-LD Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Peace of Mind Planning",
+  "url": "https://{{DOMAIN}}",
+  "logo": "https://{{DOMAIN}}/logo.png",
+  "description": "Educational U.S. estate planning for families over 50 — wills, trusts, and probate in plain English.",
+  "sameAs": [
+    "{{YOUTUBE_URL}}",
+    "{{LINKEDIN_URL}}",
+    "{{FACEBOOK_URL}}",
+    "{{X_URL}}",
+    "{{INSTAGRAM_URL}}",
+    "{{PINTEREST_URL}}"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "{{CONTACT_EMAIL}}",
+    "contactType": "customer support"
+  }
+}
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #15294A;
+  --navy-dark: #13243f;
+  --gold: #C9A24A;
+  --cream: #F5F1E6;
+  --gold-hover: #b8913d;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--cream);
+  color: var(--navy);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: inherit; }
+
+/* ===== Header ===== */
+.header {
+  background: var(--navy);
+  color: var(--cream);
+  text-align: center;
+  padding: 3rem 1.5rem 2.5rem;
+}
+
+.header__logo {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 1rem;
+}
+
+.header__title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.4rem;
+  color: var(--gold);
+}
+
+.header__tagline {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/* ===== Main ===== */
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Intro */
+.intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* Links grid */
+.links-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  color: var(--navy-dark);
+}
+
+.links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.links__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.links__btn:hover {
+  transform: translateY(-1px);
+}
+
+.links__btn:active {
+  transform: translateY(0);
+}
+
+.links__btn--primary {
+  background: var(--gold);
+  color: var(--navy-dark);
+}
+
+.links__btn--primary:hover {
+  background: var(--gold-hover);
+}
+
+.links__btn--outline {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+
+.links__btn--outline:hover {
+  background: var(--navy);
+  color: var(--cream);
+}
+
+.links__btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+/* Latest video */
+.latest {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.latest__heading {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--navy-dark);
+}
+
+.latest__wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.latest__wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--navy-dark);
+  color: var(--cream);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.footer__copy {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.footer__disclaimer {
+  max-width: 560px;
+  margin: 0 auto 1rem;
+  opacity: 0.65;
+  font-size: 0.8rem;
+}
+
+.footer__email a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer__email a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 480px) {
+  .links {
+    grid-template-columns: 1fr 1fr;
+  }
+  .header__logo {
+    width: 112px;
+    height: 112px;
+  }
+  .header__title {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 4rem 2rem 3rem;
+  }
+  .header__logo {
+    width: 128px;
+    height: 128px;
+  }
+  .header__title {
+    font-size: 2.25rem;
+  }
+  .main {
+    padding: 3rem 2rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <img class="header__logo" src="logo.png" alt="Peace of Mind Planning logo — tree of life" width="128" height="128">
+  <h1 class="header__title">Peace of Mind Planning</h1>
+  <p class="header__tagline">Estate planning in plain English.</p>
+</header>
+
+<!-- Main -->
+<main class="main">
+
+  <!-- Intro -->
+  <p class="intro">Peace of Mind Planning is an educational channel covering U.S. estate planning for families over 50 — wills, living trusts, powers of attorney, beneficiary designations, and probate, explained in plain English.</p>
+
+  <!-- Links -->
+  <h2 class="links-heading">Connect with us</h2>
+  <nav class="links" aria-label="Social links">
+
+    <a class="links__btn links__btn--primary" href="{{YOUTUBE_URL}}" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+      YouTube
+    </a>
+
+    <a class="links__btn links__btn--outline" href="{{LINKEDIN_URL}}" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04s-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77A1.75 1.75 0 0 0 0 1.73v20.54A1.75 1.75 0 0 0 1.77 24h20.45A1.76 1.76 0 0 0 24 22.27V1.73A1.76 1.76 0 0 0 22.22 0z"/></svg>
+      LinkedIn
+    </a>
+
+    <a class="links__btn links__btn--outline" href="{{FACEBOOK_URL}}" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07a12 12 0 1 0-13.88 11.86v-8.39H7.08v-3.47h3.04V9.41c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.23 2.68.23v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87v2.25h3.33l-.53 3.47h-2.8v8.39A12 12 0 0 0 24 12.07z"/></svg>
+      Facebook
+    </a>
+
+    <a class="links__btn links__btn--outline" href="{{X_URL}}" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.4l-5.8-7.58-6.63 7.58H.48l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93zm-1.3 19.5h2.04L6.48 3.24H4.3l13.3 17.41z"/></svg>
+      X (Twitter)
+    </a>
+
+    <a class="links__btn links__btn--outline" href="{{INSTAGRAM_URL}}" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23a3.72 3.72 0 0 1-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.37-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.37-1.06-.42-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.37 2.23-.42C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.88 5.88 0 0 0-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91a5.88 5.88 0 0 0 1.38 2.13 5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+      Instagram
+    </a>
+
+    <a class="links__btn links__btn--outline" href="{{PINTEREST_URL}}" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0a12 12 0 0 0-4.37 23.17c-.05-.94-.01-2.08.24-3.11l1.77-7.5s-.44-.88-.44-2.18c0-2.04 1.18-3.56 2.66-3.56 1.25 0 1.86.94 1.86 2.07 0 1.26-.8 3.14-1.22 4.89-.35 1.47.74 2.67 2.18 2.67 2.62 0 4.38-3.37 4.38-7.36 0-3.03-2.04-5.3-5.76-5.3a6.54 6.54 0 0 0-6.78 6.6c0 1.2.35 2.05.9 2.7.25.3.29.42.2.76-.07.25-.22.86-.29 1.1-.09.36-.37.49-.69.36-1.93-.79-2.82-2.9-2.82-5.28 0-3.93 3.32-8.65 9.9-8.65 5.29 0 8.77 3.83 8.77 7.93 0 5.44-3.02 9.5-7.47 9.5-1.5 0-2.9-.81-3.38-1.73l-.95 3.74c-.33 1.2-.96 2.4-1.54 3.34A12 12 0 1 0 12 0z"/></svg>
+      Pinterest
+    </a>
+
+    <a class="links__btn links__btn--outline" href="mailto:{{CONTACT_EMAIL}}">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24-8 5-8-5V6l8 5 8-5v2.24z"/></svg>
+      Email
+    </a>
+
+  </nav>
+
+  <!-- Latest video (optional — uncomment and replace VIDEO_ID when ready)
+  <section class="latest">
+    <h2 class="latest__heading">Latest Video</h2>
+    <div class="latest__wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Latest video from Peace of Mind Planning" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+  -->
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <p class="footer__copy">&copy; 2026 Peace of Mind Planning</p>
+  <p class="footer__disclaimer">This channel is educational and covers estate planning in the United States, where the rules vary from state to state. Nothing here is legal, financial, or tax advice. For your own situation, please consult a licensed professional.</p>
+  <p class="footer__email"><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+</footer>
+
+</body>
+</html>
