@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>if(location.hostname.indexOf('github.io')>-1){location.replace('https://peace-of-mind-planning.pages.dev/'+location.search+location.hash);}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Peace of Mind Planning — Estate Planning in Plain English</title>
 <meta name="description" content="Peace of Mind Planning is an educational channel covering U.S. estate planning for families over 50 — wills, living trusts, powers of attorney, beneficiary designations, and probate, explained in plain English.">
@@ -86,7 +87,7 @@ a { color: inherit; }
   backdrop-filter: blur(3px);
   color: var(--cream);
   text-align: center;
-  padding: 1.3rem 1.5rem 1.2rem;
+  padding: 0.5rem 1.5rem 1rem;
 }
 
 .header__logo {
@@ -146,11 +147,62 @@ a { color: inherit; }
 
 .panel {
   width: 100%;
-  max-width: 600px;
   background: rgba(245, 241, 230, 0.96);
   border-radius: 16px;
-  padding: 2.25rem 1.75rem;
+  padding: 1.75rem 1.5rem;
   box-shadow: 0 12px 44px rgba(0, 0, 0, 0.4);
+}
+
+.hero-left,
+.hero-right {
+  width: 100%;
+  max-width: 600px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.hero-right {
+  display: flex;
+  align-items: center;
+}
+
+.featured {
+  width: 100%;
+}
+
+.featured .video-card__btn,
+.featured .video-card__embed {
+  border-radius: 16px;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.5);
+}
+
+.featured__placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  background: linear-gradient(160deg, #1b3358, #13243f);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--cream);
+}
+
+.featured__placeholder p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+.featured__placeholder .links__btn {
+  max-width: 220px;
 }
 
 /* Intro */
@@ -438,7 +490,7 @@ a { color: inherit; }
 
 @media (min-width: 768px) {
   .header {
-    padding: 4rem 2rem 3rem;
+    padding: 0.75rem 2rem 1.25rem;
   }
   .header__logo {
     width: 98px;
@@ -448,10 +500,10 @@ a { color: inherit; }
     font-size: 1.85rem;
   }
   .main {
-    padding: 4.5rem 2rem;
+    padding: 3rem 2rem;
   }
   .panel {
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.75rem;
   }
 }
 
@@ -459,12 +511,16 @@ a { color: inherit; }
   .main {
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    padding: 4.5rem 3.5rem;
+    gap: 2.5rem;
+    padding: 3rem 3.5rem;
   }
-  .panel {
-    width: 42%;
-    max-width: 430px;
+  .hero-left {
+    width: 38%;
+    max-width: 420px;
+  }
+  .hero-right {
+    width: 56%;
+    max-width: 680px;
   }
 }
 </style>
@@ -483,13 +539,14 @@ a { color: inherit; }
 <!-- Main -->
 <main class="main">
 
-  <!-- Intro (left) -->
-  <div class="panel panel--left">
+  <!-- Left column: description panel + links panel stacked -->
+  <div class="hero-left">
+
+  <div class="panel">
   <p class="intro">Peace of Mind Planning is an educational channel covering U.S. estate planning for families over 50 — wills, living trusts, powers of attorney, beneficiary designations, and probate, explained in plain English.</p>
   </div>
 
-  <!-- Connect + links (right) -->
-  <div class="panel panel--right">
+  <div class="panel">
   <h2 class="links-heading">Connect with us</h2>
   <nav class="links" aria-label="Social links">
 
@@ -524,17 +581,17 @@ a { color: inherit; }
     </a>
 
   </nav>
-
-  <!-- Latest video (optional — uncomment and replace VIDEO_ID when ready)
-  <section class="latest">
-    <h2 class="latest__heading">Latest Video</h2>
-    <div class="latest__wrap">
-      <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Latest video from Peace of Mind Planning" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </section>
-  -->
-
   </div>
+
+  </div><!-- /hero-left -->
+
+  <!-- Right column: featured (latest) video -->
+  <div class="hero-right">
+    <div class="featured" id="featured">
+      <div class="featured__placeholder"><p>Loading latest video…</p></div>
+    </div>
+  </div>
+
 </main>
 
 </div><!-- /hero -->
@@ -561,40 +618,82 @@ a { color: inherit; }
 
 <script>
 (function () {
+  var CHANNEL = 'https://www.youtube.com/@peaceofmindplanning';
+  var featured = document.getElementById('featured');
   var grid = document.getElementById('videos-grid');
   var state = document.getElementById('videos-state');
-  if (!grid) return;
+
   function esc(s) { var d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+
+  function embed(id, title) {
+    var e = document.createElement('div');
+    e.className = 'video-card__embed';
+    e.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
+      '?autoplay=1&rel=0" title="' + esc(title) +
+      '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    return e;
+  }
+
+  function facade(id, title, big) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'video-card__btn';
+    b.setAttribute('aria-label', 'Play video: ' + title);
+    var quality = big ? 'maxresdefault' : 'hqdefault';
+    b.innerHTML = '<img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(id) + '/' + quality +
+      '.jpg" alt="' + esc(title) + '"><span class="video-card__play" aria-hidden="true"></span>';
+    var img = b.querySelector('img');
+    img.onerror = function () { this.onerror = null; this.src = 'https://i.ytimg.com/vi/' + encodeURIComponent(id) + '/hqdefault.jpg'; };
+    b.addEventListener('click', function () { b.replaceWith(embed(id, title)); });
+    return b;
+  }
+
+  function placeholder() {
+    var d = document.createElement('div');
+    d.className = 'featured__placeholder';
+    d.innerHTML = '<svg viewBox="0 0 24 24" width="48" height="48" fill="#C9A24A" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>' +
+      '<p>New videos every week</p>' +
+      '<a class="links__btn links__btn--primary" href="' + CHANNEL + '" target="_blank" rel="noopener noreferrer">Visit our channel</a>';
+    return d;
+  }
+
+  function renderFeatured(vids) {
+    if (!featured) return;
+    featured.innerHTML = '';
+    if (vids.length) { featured.appendChild(facade(vids[0].id, vids[0].title, true)); }
+    else { featured.appendChild(placeholder()); }
+  }
+
+  function renderGrid(vids) {
+    if (!grid) return;
+    var rest = vids.slice(1); // first one is shown as the featured video
+    if (!rest.length) {
+      if (state) state.textContent = vids.length ? '' : 'New videos are on the way — subscribe so you don’t miss them.';
+      return;
+    }
+    if (state) state.hidden = true;
+    rest.forEach(function (v) {
+      if (!v || !v.id) return;
+      var card = document.createElement('div');
+      card.className = 'video-card';
+      card.appendChild(facade(v.id, v.title, false));
+      var p = document.createElement('p');
+      p.className = 'video-card__title';
+      p.textContent = v.title;
+      card.appendChild(p);
+      grid.appendChild(card);
+    });
+  }
+
   fetch('/videos', { headers: { 'accept': 'application/json' } })
     .then(function (r) { return r.ok ? r.json() : { videos: [] }; })
     .then(function (data) {
       var vids = (data && data.videos) || [];
-      if (!vids.length) {
-        state.textContent = 'New videos are on the way — subscribe so you don’t miss them.';
-        return;
-      }
-      if (state) state.hidden = true;
-      vids.forEach(function (v) {
-        if (!v || !v.id) return;
-        var card = document.createElement('div');
-        card.className = 'video-card';
-        card.innerHTML =
-          '<button class="video-card__btn" type="button" aria-label="Play video: ' + esc(v.title) + '">' +
-            '<img loading="lazy" src="https://i.ytimg.com/vi/' + encodeURIComponent(v.id) + '/hqdefault.jpg" alt="' + esc(v.title) + '">' +
-            '<span class="video-card__play" aria-hidden="true"></span>' +
-          '</button>' +
-          '<p class="video-card__title">' + esc(v.title) + '</p>';
-        var btn = card.querySelector('.video-card__btn');
-        btn.addEventListener('click', function () {
-          var embed = document.createElement('div');
-          embed.className = 'video-card__embed';
-          embed.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(v.id) + '?autoplay=1&rel=0" title="' + esc(v.title) + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-          btn.replaceWith(embed);
-        });
-        grid.appendChild(card);
-      });
+      renderFeatured(vids);
+      renderGrid(vids);
     })
     .catch(function () {
+      renderFeatured([]);
       if (state) state.textContent = 'Watch our latest videos on YouTube.';
     });
 })();
