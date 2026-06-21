@@ -119,28 +119,30 @@ a { color: inherit; }
   flex: 1;
   width: 100%;
   padding: 3rem 1.5rem;
-  background-image: linear-gradient(rgba(19, 36, 63, 0.55), rgba(19, 36, 63, 0.55)), url('bg.jpg');
+  background-image: linear-gradient(rgba(19, 36, 63, 0.5), rgba(19, 36, 63, 0.5)), url('bg.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.card {
+.panel {
   width: 100%;
   max-width: 600px;
   background: rgba(245, 241, 230, 0.96);
   border-radius: 16px;
-  padding: 2.5rem 1.75rem;
+  padding: 2.25rem 1.75rem;
   box-shadow: 0 12px 44px rgba(0, 0, 0, 0.4);
 }
 
 /* Intro */
 .intro {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin-bottom: 0;
   text-align: center;
 }
 
@@ -157,7 +159,7 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.75rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
 }
 
 .links__btn {
@@ -297,8 +299,21 @@ a { color: inherit; }
   .main {
     padding: 4.5rem 2rem;
   }
-  .card {
-    padding: 3rem 2.5rem;
+  .panel {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (min-width: 920px) {
+  .main {
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 4.5rem 3.5rem;
+  }
+  .panel {
+    width: 42%;
+    max-width: 430px;
   }
 }
 </style>
@@ -314,12 +329,14 @@ a { color: inherit; }
 
 <!-- Main -->
 <main class="main">
-  <div class="card">
 
-  <!-- Intro -->
+  <!-- Intro (left) -->
+  <div class="panel panel--left">
   <p class="intro">Peace of Mind Planning is an educational channel covering U.S. estate planning for families over 50 — wills, living trusts, powers of attorney, beneficiary designations, and probate, explained in plain English.</p>
+  </div>
 
-  <!-- Links -->
+  <!-- Connect + links (right) -->
+  <div class="panel panel--right">
   <h2 class="links-heading">Connect with us</h2>
   <nav class="links" aria-label="Social links">
 
