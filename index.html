@@ -139,9 +139,17 @@ a { color: inherit; }
   width: 100%;
   padding: 3rem 1.5rem;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-row {
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 1.5rem;
 }
 
@@ -509,10 +517,11 @@ a { color: inherit; }
 
 @media (min-width: 920px) {
   .main {
-    justify-content: space-between;
-    align-items: center;
-    gap: 2.5rem;
     padding: 3rem 3.5rem;
+  }
+  .hero-row {
+    justify-content: space-between;
+    gap: 2.5rem;
   }
   .hero-left {
     width: 38%;
@@ -538,6 +547,7 @@ a { color: inherit; }
 
 <!-- Main -->
 <main class="main">
+  <div class="hero-row">
 
   <!-- Left column: description panel + links panel stacked -->
   <div class="hero-left">
@@ -592,6 +602,7 @@ a { color: inherit; }
     </div>
   </div>
 
+  </div><!-- /hero-row -->
 </main>
 
 </div><!-- /hero -->
