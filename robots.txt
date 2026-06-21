@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trumanbrowntabu-coder.github.io/peace-of-mind-planning/sitemap.xml
+Sitemap: https://peace-of-mind-planning.pages.dev/sitemap.xml
