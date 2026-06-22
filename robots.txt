@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://peace-of-mind-planning.pages.dev/sitemap.xml
+Sitemap: https://peaceofmindplanningus.pages.dev/sitemap.xml

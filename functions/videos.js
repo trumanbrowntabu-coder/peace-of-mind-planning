@@ -19,7 +19,7 @@ export async function onRequest() {
     const res = await fetch(feedUrl, {
       headers: {
         "user-agent":
-          "Mozilla/5.0 (compatible; PeaceOfMindPlanning/1.0; +https://peace-of-mind-planning.pages.dev)",
+          "Mozilla/5.0 (compatible; PeaceOfMindPlanning/1.0; +https://peaceofmindplanningus.pages.dev)",
         accept: "application/atom+xml, application/xml, text/xml",
       },
       cf: { cacheTtl: 1800, cacheEverything: true },
